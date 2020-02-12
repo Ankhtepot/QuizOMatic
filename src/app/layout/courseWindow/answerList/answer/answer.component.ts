@@ -39,12 +39,10 @@ export class AnswerComponent implements OnInit {
 
     checkboxChanged(event) {
         this.checked = event.target.checked;
-        // this.answer.isChecked = event.target;
-        // this.testService.setAnswerCheckStatus(this.answerIndex, this.checked);
         this.answerTicked();
     }
 
-    private answerTicked()
+  private answerTicked()
     {
       this.answer.isChecked = this.checked;
       this.testService.setAnswerCheckStatus(this.answerIndex, this.checked);
@@ -63,7 +61,9 @@ export class AnswerComponent implements OnInit {
     }
 
     answerBoxClick() {
-      this.checked = !this.checked;
-      this.answerTicked();
+      if (this.editable) {
+        this.checked = !this.checked;
+        this.answerTicked();
+      }
     }
 }
