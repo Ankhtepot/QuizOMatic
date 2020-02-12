@@ -10,13 +10,14 @@ export class CoursesService {
   private selectedCourse: Course = null;
   private courses: Course[] = null;
   private coursesProvider: CoursesProvider = null;
-  private noCoursesFound: boolean = false;
+  private noCoursesFound = false;
 
   selectedCourseIdChanged = new EventEmitter<string>();
   notifyCoursesLoaded = new EventEmitter<boolean>();
 
   constructor() {
     this.coursesProvider = new CoursesProvider();
+    this.BypassLoadFromToolbar();
   }
 
   loadCoursesForGroup(groupName: string) {
@@ -61,5 +62,12 @@ export class CoursesService {
 
   getSelectedCourseTests() {
     return JSON.parse(JSON.stringify(this.selectedCourse.tests));
+  }
+
+  // TODO: remove before prod!
+  BypassLoadFromToolbar() {
+    this.courses = this.coursesProvider.loadCoursesForGroup('all');
+    this.noCoursesFound = false;
+    this.notifyCoursesLoaded.emit(true);
   }
 }

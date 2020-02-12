@@ -4,7 +4,7 @@
 }
 
 .flex-v {
-    align-items: flex-start;
+    align-items: center;
     align-self: center;
     text-align: center;
     padding: 0 20%;

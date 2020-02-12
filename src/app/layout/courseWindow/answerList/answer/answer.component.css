@@ -1,5 +1,12 @@
+#answer_component {
+  border: 1px solid lightblue;
+  min-width: 300px;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
 .answer-text {
-    margin: 0 0.5rem;
+  margin: 0.1rem;
 }
 
 .answer-correct {
@@ -24,9 +31,4 @@
   #answer_component {
     margin-bottom: 0.5rem;
   }
-}
-
-#answer_component {
-  border: 1px solid lightblue;
-  min-width: 300px;
 }

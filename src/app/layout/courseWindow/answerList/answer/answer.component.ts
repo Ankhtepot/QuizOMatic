@@ -39,8 +39,15 @@ export class AnswerComponent implements OnInit {
 
     checkboxChanged(event) {
         this.checked = event.target.checked;
-        this.answer.isChecked = event.target;
-        this.testService.setAnswerCheckStatus(this.answerIndex, this.checked);
+        // this.answer.isChecked = event.target;
+        // this.testService.setAnswerCheckStatus(this.answerIndex, this.checked);
+        this.answerTicked();
+    }
+
+    private answerTicked()
+    {
+      this.answer.isChecked = this.checked;
+      this.testService.setAnswerCheckStatus(this.answerIndex, this.checked);
     }
 
     isAnsweredCorrectly() {
@@ -53,5 +60,10 @@ export class AnswerComponent implements OnInit {
           ? this.answerValidationState.CORRECT
           : this.answerValidationState.INCORRECT;
       }
+    }
+
+    answerBoxClick() {
+      this.checked = !this.checked;
+      this.answerTicked();
     }
 }
