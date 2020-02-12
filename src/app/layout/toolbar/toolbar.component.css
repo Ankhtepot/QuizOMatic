@@ -18,3 +18,9 @@
 .courses-found {
   background: url('../../resources/img/greenOK.png') no-repeat center center/contain;
 }
+
+@media(max-width: 500px) {
+  #toolbar {
+    height: 100px;
+  }
+}
