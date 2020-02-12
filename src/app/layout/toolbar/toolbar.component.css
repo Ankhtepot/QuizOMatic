@@ -1,14 +1,19 @@
 #toolbar {
   width: 100%;
-  height: 50px;
+  /*height: 50px;*/
 }
 
 .flex-h {
   background-color: #4287f5;
+  padding: 0.2rem;
 }
 
 .courses-loaded-status {
   margin-left: 0.7rem;
+}
+
+.courses-loaded-status p {
+  margin: 0.2rem;
 }
 
 .courses-not-found {
@@ -19,8 +24,8 @@
   background: url('../../resources/img/greenOK.png') no-repeat center center/contain;
 }
 
-@media(max-width: 500px) {
-  #toolbar {
-    height: 100px;
-  }
-}
+/*@media(max-width: 500px) {*/
+/*  #toolbar {*/
+/*    height: 100px;*/
+/*  }*/
+/*}*/

@@ -1,8 +1,8 @@
-import { Course } from "./model/course.model";
-import { Question } from "./model/question.model";
-import { QuestionTypes } from "./question-types.enum";
-import { Answer } from "./model/answer.model";
-import { Test } from "./model/test.model";
+import {Course} from './model/course.model';
+import {Question} from './model/question.model';
+import {QuestionTypes} from './question-types.enum';
+import {Answer} from './model/answer.model';
+import {Test} from './model/test.model';
 
 export class CoursesProvider {
   getCourses(): Course[] {
@@ -21,6 +21,32 @@ export class CoursesProvider {
   }
 
   private courses: Course[] = [
+    new Course('Test Course', 'test', 'admin', [
+      new Test('Test-o-test','test',[
+        new Question('Question 1', QuestionTypes.CHECKBOX, [
+          new Answer('Answer is Correct', true),
+          new Answer('Answer is Incorrect', false),
+          new Answer('Answer is Incorrect', false),
+        ]),
+        new Question('Question 1', QuestionTypes.CHECKBOX, [
+          new Answer('Answer is Incorrect', false),
+          new Answer('Answer is Correct', true),
+          new Answer('Answer is Incorrect', false),
+        ])
+      ]),
+      new Test('Test-o-second-test','test',[
+        new Question('Question 1', QuestionTypes.CHECKBOX, [
+          new Answer('Answer is Correct', true),
+          new Answer('Answer is Incorrect', false),
+          new Answer('Answer is Correct', true),
+        ]),
+        new Question('Question 1', QuestionTypes.CHECKBOX, [
+          new Answer('Answer is Incorrect', false),
+          new Answer('Answer is Correct', true),
+          new Answer('Answer is Correct', true),
+        ])
+      ])
+    ]),
     new Course("Linux Akademie", "linux", "engeto", [
       new Test("1. Lekce: Práce s Linuxem", "l1", [
         new Question(

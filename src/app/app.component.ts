@@ -15,10 +15,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.coursesService.notifyCoursesLoaded.subscribe(
       found => {
-        if (found) {
-          this.coursesLoaded = this.coursesService.getCourses() !== null;
+        this.coursesLoaded = found && this.coursesService.getCourses().length > 0;
         }
-      }
     )
   }
 }
