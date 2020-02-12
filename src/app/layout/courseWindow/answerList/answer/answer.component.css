@@ -1,0 +1,32 @@
+.answer-text {
+    margin: 0 0.5rem;
+}
+
+.answer-correct {
+  background: lightgreen;
+}
+
+.answer-incorrect {
+  background: mistyrose;
+}
+
+@media(max-width: 800px) {
+  .flex-h {
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .checkbox-m {
+    transform: scaleX(3);
+  }
+
+  #answer_component {
+    margin-bottom: 0.5rem;
+  }
+}
+
+#answer_component {
+  border: 1px solid lightblue;
+  min-width: 300px;
+}

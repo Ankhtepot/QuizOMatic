@@ -1,0 +1,29 @@
+h2 {
+    color: #4287f5
+}
+
+.test-navigation {
+  margin: 0.5rem 0;
+}
+
+.img-btn-toolbar {
+  background: url('../../../resources/img/refresh.png') no-repeat center center/contain;
+}
+
+app-question {
+  margin: 0.5rem;
+}
+
+.question {
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.base-button {
+  transition: all 0.3s;
+}
+
+.base-button:enabled {
+  transform: scale(1.2);
+  box-shadow: 0 0 2px 2px lawngreen;
+}

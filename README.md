@@ -1,0 +1,2 @@
+# QuizOMatic
+ Quiz platform
