@@ -108,7 +108,7 @@ export class CoursesProvider {
             ),
             new Answer(
               " Absolutní cesta funguje vždy, ať už se vyskytujeme v jakémkoli adresáři v rámci stejného systému. ",
-              false
+              true
             ),
             new Answer(
               " Relativní cesta je platná pouze z jednoho umístění v systému, protože z něho vychází. ",
