@@ -7,6 +7,4 @@ export class Course {
         public userGroup: string,
         public tests: Test[]
     ) {}
-
-    getTests = () => this.tests;
 }

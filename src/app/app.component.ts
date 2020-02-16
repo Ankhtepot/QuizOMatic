@@ -19,4 +19,8 @@ export class AppComponent implements OnInit{
         }
     )
   }
+
+  loadCourses() {
+    this.coursesService.loadCoursesExternally();
+  }
 }

@@ -68,7 +68,6 @@ export class TestService {
 
   setSelectedTest(selectedTestIndex: number) {
     if (selectedTestIndex === null) {
-      console.log("setting selectedTest to null");
       this.selectedTest = null;
       this.selectedQuestion = null;
     } else {

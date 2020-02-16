@@ -28,7 +28,7 @@ export class CoursesProvider {
           new Answer('Answer is Incorrect', false),
           new Answer('Answer is Incorrect', false),
         ]),
-        new Question('Question 1', QuestionTypes.CHECKBOX, [
+        new Question('Question 2', QuestionTypes.CHECKBOX, [
           new Answer('Answer is Incorrect', false),
           new Answer('Answer is Correct', true),
           new Answer('Answer is Incorrect', false),
@@ -40,7 +40,7 @@ export class CoursesProvider {
           new Answer('Answer is Incorrect', false),
           new Answer('Answer is Correct', true),
         ]),
-        new Question('Question 1', QuestionTypes.CHECKBOX, [
+        new Question('Question 2', QuestionTypes.CHECKBOX, [
           new Answer('Answer is Incorrect', false),
           new Answer('Answer is Correct', true),
           new Answer('Answer is Correct', true),
@@ -728,8 +728,389 @@ export class CoursesProvider {
             new Answer("date -d '12/10/2019' +%s", true)
           ]
         )
+      ]),
+      new Test('6. Lekce: Archivace a komprese', 'l6arch', [
+        new Question(
+          "Jaký je rozdíl mezi archivací a kompresí?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" U archivace jde o zálohování souborů do dočasné paměti. ", false),
+            new Answer(" U archivace jde o zabalení více složek a souborů do jednoho archivu. ", true),
+            new Answer(" U archivace jde zmenšování objemu dat daných souborů. ", false),
+            new Answer(" U komprese jde o zálohování souborů do dočasné paměti. ", false),
+            new Answer(" U komprese jde o zabalení více složek a souborů do jednoho archivu. ", false),
+            new Answer(" U komprese jde zmenšování objemu dat daných souborů. ", true)
+          ]
+        ),
+        new Question(
+          "Které z následujících příkazů slouží pouze ke kompresi?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("gzip", true),
+            new Answer("zip", true),
+            new Answer("bzip", true),
+            new Answer("xz", true),
+            new Answer("tar", false),
+            new Answer("unzip", false)
+          ]
+        ),
+        new Question(
+          "Vyber správné tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Komprese je vždy součástí procesu archivace. ", false),
+            new Answer(" Opakem komprese je dekomprese ", true),
+            new Answer(" Existují různé druhy komprese. ", true),
+            new Answer(" Čistě kompresní příkazy vždy zachovávají původní soubor. ", false),
+            new Answer(" Výsledná velikost kompresovaného souboru může být větší, než velikost původní. ", true)
+          ]
+        ),
+        new Question(
+          "Který z následujících příkazů slouží pro vytvoření archivu tar",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" tar -czvf ", true),
+            new Answer(" tar -cjvf ", true),
+            new Answer(" tar -xzvf ", false),
+            new Answer(" tar -cf ", true),
+            new Answer(" tar -tvf ", false)
+          ]
+        ),
+        new Question(
+          "Který z následujících příkazů neslouží pro vytvoření archivu tar?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" tar -cJvf ", false),
+            new Answer(" tar -tvf ", true),
+            new Answer(" tar -xf ", true),
+            new Answer(" tar -cjvf ", false),
+            new Answer(" tar -xzvf ", true)
+          ]
+        ),
+        new Question(
+          "Proč je někdy výsledná velikost kompresovaných souborů může být větší, než souhrn velikosti původní souborů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Výsledná velikost kompresovaného souboru nemůže být větší než velikost původní. ", false),
+            new Answer(" Protože soubor zahrnuje meta informace. ", true),
+            new Answer(" Protože nastala chyba v kompresi. ", false),
+            new Answer(" Protože některé kompresní metody používají komplikovaný algoritmus. ", false)
+          ]
+        ),
+        new Question(
+          "Soubory v archivu si můžeme zobrazit i bez dekomprese.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("ano", true),
+            new Answer("ne", false)
+          ]
+        ),
+        new Question(
+          "Který z následujících příkazů slouží pro zobrazení obsahu archivu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" unzip -l ", true),
+            new Answer(" tar -tvf ", true),
+            new Answer(" gunzip -t ", false),
+            new Answer(" Ani jeden. Zobrazit obsah archivu není možné bez extrakce. ", false)
+          ]
+        ),
+        new Question(
+          "Mám 2 soubory - s1 a s2. Chci je dát do jednoho zipu. Poradíš mi, jak na to?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" zip s1 s2 archiv.zip ", false),
+            new Answer(" zip archiv.zip s1 s2 ", true),
+            new Answer(" zip s1.zip s2.zip ", false),
+            new Answer(" zip s1 s2 ", false)
+          ]
+        ),
+        new Question(
+          "Které z níže uvedených tvrzení je pravdivé?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Zip je používán převážně na unixových systémech. ", false),
+            new Answer(" Zip je používán převážně na Windows. ", true),
+            new Answer(" Součástí procesu vytvoření archivu je vždy komprese dat. ", false),
+            new Answer(" Součástí procesu vytvoření archivu může být komprese dat. ", true)
+          ]
+        ),
+        new Question(
+          "Které z níže uvedených tvrzení je pravdivé?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" zip a unzip má stejnou manuálovou stránku. ", false),
+            new Answer(" zip a unzip jsou rozdílné příkazy. ", true),
+            new Answer(" U zipu jde měnit kompresní algoritmus. ", false),
+            new Answer(" Pomocí příkazu zip dokážeme upravovat už existující archiv. ", true)
+          ]
+        ),
+      ]),
+      new Test('6. Lekce: Vyhledávání Souborů', 'l6files', [
+        new Question(
+          "Vyber správné tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" locate je rychlejší než find ", true),
+            new Answer(" locate čte data z vlastní databáze cest ", true),
+            new Answer(" find používá stejnou databázi cest jako locate jen je pomalejší ", false),
+            new Answer(" find umožňuje hledat podle velkého množství parametrů jako velikost souboru nebo dle jeho vlastníka ", true),
+            new Answer(" updatedb aktualizuje databázi cest příkazu locate ", true)
+          ]
+        ),
+        new Question(
+          "K čemu slouží příkaz file?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Zobrazuje informace o velikosti souboru. ", false),
+            new Answer(" Zobrazuje informace o majiteli souboru. ", false),
+            new Answer(" Přiřazuje souboru příponu dle typu souboru. ", false),
+            new Answer(" Zobrazuje informace o typu souboru. ", true),
+            new Answer(" Vyhledává soubory daného jména v systému. ", false)
+          ]
+        ),
+        new Question(
+          "K čemu se používá příkaz locate?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Vyhledává soubory daného jména v systému. ", true),
+            new Answer(" Jedná se o rychlé vyhledávání názvu cesty k souboru ", true),
+            new Answer(" Jedná se o robustní vyhledávání názvu cesty k souboru ", false),
+            new Answer(" Slouží pro kopírování a vkládání velkých adresářů ", false)
+          ]
+        ),
+        new Question(
+          "Pomocí jakého příkazu můžeme aktualizovat databázi, ze které čerpá příkaz locate?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Pomocí příkazu updatedb. ", true),
+            new Answer(" Pomocí příkazu dbupdate. ", false),
+            new Answer(" Pomocí příkazu sudo update. ", false),
+            new Answer(" Pomocí příkazu update sudo. ", false)
+          ]
+        ),
+        new Question(
+          "Jak můžeme vyhledat všechny složky v našem domovském adresáři?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" find ~ -type d ", true),
+            new Answer(" find -type d ", false),
+            new Answer(" find -d ", false),
+            new Answer(" find ~ -type f ", false)
+          ]
+        ),
+      ]),
+      new Test('6. Lekce: Velikost Souborů', 'l6fsize', [
+        new Question(
+          "Pomocí kterého příkazu si zobrazíme typ souborových systémů na našem disku?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" df -T ", true),
+            new Answer(" du -T ", false),
+            new Answer(" df -S ", false),
+            new Answer(" du -S ", false)
+          ]
+        ),
+        new Question(
+          "Pomocí kterého příkazu si upravíme zobrazení datové jednotky?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" df -T ", false),
+            new Answer(" df -h ", true),
+            new Answer(" du -T ", false),
+            new Answer(" du -h ", true)
+          ]
+        ),
+        new Question(
+          "Pomocí kterého příkazu si zobrazíme velikost jednotlivých souborů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" df -a ", false),
+            new Answer(" df -s ", false),
+            new Answer(" du -a ", true),
+            new Answer(" du -s ", false)
+          ]
+        ),
+        new Question(
+          "Pomocí kterého příkazu si zobrazíme součet všech dat v daném adresáři?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" du -s ", true),
+            new Answer(" du -sh ", true),
+            new Answer(" df -ah ", false),
+            new Answer(" df -a ", false)
+          ]
+        ),
+      ]),
+      new Test('7. Lekce: Vstupy A Výstupy', 'l7io', [
+        new Question(
+          "Proč používáme slovo 'standardní', když se bavíme o vstupu, výstupu a chybě?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Protože formát těchto dat je standardizovaný. ", false),
+            new Answer(" Protože se s nimi běžně setkáváme. ", false),
+            new Answer(" Slovíčko 'standardní' nemá význam. Jedná se jen o konvenci. ", true),
+            new Answer(" Slovíčko 'standardní' je přežitkem z minulosti, takže není vhodné ho používat. ", false)
+          ]
+        ),
+        new Question(
+          "Jak souhrnně nazýváme standardní vstup, výstup a chybu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" standardní operace ", false),
+            new Answer(" standardní cache ", false),
+            new Answer(" standardní proudy ", true),
+            new Answer(" standardní proměnné ", false)
+          ]
+        ),
+        new Question(
+          "V jakém případě dostaneme STDERR?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Když ukládáme výstup do souboru. ", false),
+            new Answer(" Když ukládáme výstup do adresáře. ", true),
+            new Answer(" Když poskytneme programu nevhodné argumenty. ", true),
+            new Answer(" Když neposkytneme žádné argumenty. ", false)
+          ]
+        ),
+        new Question(
+          "K čemu můžeme použít STDERR?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Korektní výstup ", false),
+            new Answer(" Debugging ", true),
+            new Answer(" Informace, které nemusí admin nutně vidět ", true),
+            new Answer(" Výstup ze souboru ", false),
+            new Answer(" Vstup do příkazu ", false)
+          ]
+        ),
+        new Question(
+          "Co můžeme očekávát v případě, že se program vykoná bez problémů.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("STDIN", false),
+            new Answer("STDOUT", true),
+            new Answer("STDERR", false)
+          ]
+        ),
+      ]),
+      new Test('7. Lekce: Přesměrování', 'l7red', [
+        new Question(
+          "K čemu slouží přesměrování pomocí > ?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Slouží k přesměrování výstupu z příkazu do určitého souboru. ", true),
+            new Answer(" Slouží k přesměrování vstupu do určitého souboru. ", false),
+            new Answer(" Při přesměrování výstupu přepíše cílový soubor, pokud existuje. ", true),
+            new Answer(" Pokud soubor, do kterého chceme přesměrovat, neexistuje, Terminál vypíše chybu. ", false),
+            new Answer(" Pokud soubor, do kterého chceme přesměrovat, neexistuje, Terminál ho vytvoří. ", true)
+          ]
+        ),
+        new Question(
+          "Jak mám postupovat, když chci výstup z příkazu vložit do souboru, ale nepřepsat celý jeho obsah?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" To není možné, museli bychom vytvořit nový soubor. ", false),
+            new Answer(" Můžeme použít přesměrování >, které doplní výstup na konec souboru. ", false),
+            new Answer(" Můžeme použít přesměrování >>, které doplní výstup na konec souboru. ", true),
+            new Answer(" Můžeme použít přesměrování <, které doplní výstup na konec souboru. ", false)
+          ]
+        ),
+        new Question(
+          "Můžeme přesměrovat výstup pomocí > i do adresáře? Např. takto: ls -l > Documents",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Ano. V adresáři se automaticky vytvoří soubor, kam se výstup přesměruje. ", false),
+            new Answer(" Ano. Adresář se změní na soubor, který obsahuje výstup přesměrování. ", false),
+            new Answer(" Ne. Terminál vypíše chybovou hlášku '-bash: Documents: ls a directory'. ", true),
+            new Answer(" Ne. Výstup se dá přesměrovat jen do souboru. ", true)
+          ]
+        ),
+        new Question(
+          "Když chci použít výstup z příkazu jako vstup pro jiný příkaz, použiju:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Přesměrování > ", false),
+            new Answer(" Přesměrování >> ", false),
+            new Answer(" Pipe | ", true)
+          ]
+        ),
+        new Question(
+          "Který z následujících příkazů přesměruje výstup?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ls -l > ", true),
+            new Answer(" ls -l 0> ", true),
+            new Answer(" ls -l 2> ", false)
+          ]
+        ),
+      ]),
+      new Test('7. Lekce: Přesměrování vstupu', 'l7inpred', [
+        new Question(
+          "Který z následujících operátorů přesměruje vstup ze souboru?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("<", true),
+            new Answer("<<", false),
+            new Answer("<<<", false)
+          ]
+        ),
+        new Question(
+          "Který z následujících operátorů vstup přímo z řetězce?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("<", false),
+            new Answer("<<", false),
+            new Answer("<<<", true)
+          ]
+        ),
+        new Question(
+          "Který z následujících operátorů je vhodný pro automatizaci procesů?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("<", false),
+            new Answer("<<", true),
+            new Answer("<<<", false),
+            new Answer("Všechny", false)
+          ]
+        ),
+        new Question(
+          "Čím se dá nahradit příkaz cat <<< Text",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" cp Text ", false),
+            new Answer(" cat Text ", false),
+            new Answer(" echo Text ", true),
+            new Answer(" <<< Text ", false)
+          ]
+        ),
+        new Question(
+          "Co to značí EOF?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" End or finish ", false),
+            new Answer(" End of file ", true),
+            new Answer(" Konec souboru ", true),
+            new Answer(" Konec řádku ", false)
+          ]
+        ),
       ])
     ]),
-    new Course("Python Akademie", "python", "engetoB", [])
+    new Course("Python Akademie", "python", "engetoB", [
+      new Test('exampleTest', 'ext', [
+        new Question(
+          "example",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("answer1", false),
+            new Answer("answer2", false),
+            new Answer("answer3", false),
+            new Answer("answer4", false),
+            new Answer("answer5", false),
+            new Answer("answer6", false)
+          ]
+        ),
+      ])
+    ])
   ];
 }

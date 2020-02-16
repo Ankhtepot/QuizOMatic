@@ -12,11 +12,19 @@ export class ToolbarComponent implements OnInit {
 
   constructor(private coursesService: CoursesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.coursesService.notifyLoadCoursesExternally.subscribe(
+      courseId => this.loadCourses(courseId)
+    )
+  }
 
   userGroupConfirmed(event) {
-    console.log('loading courses for: ' + event.target.value);
-    this.coursesLoaded = !this.coursesService.loadCoursesForGroup(event.target.value);
+    // console.log('loading courses for: ' + event.target.value);
+    this.loadCourses(event.target.value);
+  }
+
+  loadCourses(courseId: string) {
+    this.coursesLoaded = !this.coursesService.loadCoursesForGroup(courseId);
     this.firstLoaded = false;
   }
 }

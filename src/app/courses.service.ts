@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Course } from "./shared/model/course.model";
 import { CoursesProvider } from "./shared/courses-provider";
+import {TestService} from './layout/courseWindow/test.service';
 
 @Injectable({
   providedIn: "root"
@@ -14,10 +15,10 @@ export class CoursesService {
 
   selectedCourseIdChanged = new EventEmitter<string>();
   notifyCoursesLoaded = new EventEmitter<boolean>();
+  notifyLoadCoursesExternally = new EventEmitter<string>();
 
   constructor() {
     this.coursesProvider = new CoursesProvider();
-    this.BypassLoadFromToolbar();
   }
 
   loadCoursesForGroup(groupName: string) {
@@ -39,7 +40,7 @@ export class CoursesService {
   }
 
   getSelectedCourse(): Course {
-    return this.selectedCourse;
+    return JSON.parse(JSON.stringify(this.selectedCourse));
   }
 
   setSelectedCourseId(selectedCourseId: string) {
@@ -63,10 +64,10 @@ export class CoursesService {
     return JSON.parse(JSON.stringify(this.selectedCourse.tests));
   }
 
-  // TODO: remove before prod!
-  BypassLoadFromToolbar() {
-    this.courses = this.coursesProvider.loadCoursesForGroup('all');
-    this.noCoursesFound = false;
+  loadCoursesExternally() {
+    // this.courses = this.coursesProvider.loadCoursesForGroup('all');
+    // this.noCoursesFound = false;
+    this.notifyLoadCoursesExternally.emit('all');
     this.notifyCoursesLoaded.emit(true);
   }
 }
