@@ -19,7 +19,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   userGroupConfirmed(event) {
-    // console.log('loading courses for: ' + event.target.value);
     this.loadCourses(event.target.value);
   }
 

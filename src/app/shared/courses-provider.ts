@@ -1040,7 +1040,7 @@ export class CoursesProvider {
           QuestionTypes.CHECKBOX,
           [
             new Answer(" ls -l > ", true),
-            new Answer(" ls -l 0> ", true),
+            new Answer(" ls -l 0> ", false),
             new Answer(" ls -l 2> ", false)
           ]
         ),
@@ -1094,6 +1094,59 @@ export class CoursesProvider {
             new Answer(" Konec řádku ", false)
           ]
         ),
+      ]),
+      new Test('#2 1. Lekce: Složení OS Linux', '2.1.1', [
+        new Question(
+          "Jak se jmenuje soubor/program, který je srdcem počítače?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Srdce", false),
+            new Answer("Kernel", true),
+            new Answer("Jádro", true),
+            new Answer(" Základní program ", false)
+          ]
+        ),
+        new Question(
+          "Co jsou to systémová volání?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Jedná se o překladače programovacích jazyků. ", false),
+            new Answer(" Jedná se o komunikaci různých systémů v rámci sítě. ", false),
+            new Answer(" Jedná se o mezivrstvu mezi hardwarem a aplikačními programy. ", false),
+            new Answer(" Jedná se o způsob komunikace s kernelem pro přístup k technickým prostředkům (CPU, paměť RAM). ", true)
+          ]
+        ),
+        new Question(
+          "Vyber důležité subsystémy jádra Linuxu:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" správa sítě ", true),
+            new Answer(" překladač jazyka C ", false),
+            new Answer(" řízení procesů ", true),
+            new Answer(" správa paměti ", true),
+            new Answer(" dokumentace aplikací na systému ", false)
+          ]
+        ),
+        new Question(
+          "K čemu jsou tyto důležité subsystémy jádra dobré?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" starají se o management procesů ", true),
+            new Answer(" starají se o hlídání hranice mezi aplikačními a systémovými programi ", true),
+            new Answer(" starají se o integritu souborových systémů ", false),
+            new Answer(" starají se o logování chyb ", false)
+          ]
+        ),
+        new Question(
+          "K čemu nám je filesystém?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Slouží k organizaci dat. ", true),
+            new Answer(" Slouží k systémovým voláním. ", false),
+            new Answer(" Řídí ovladače systému. ", false),
+            new Answer(" Slouží k řídění procesů. ", false)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [
@@ -1114,3 +1167,6 @@ export class CoursesProvider {
     ])
   ];
 }
+/*
+ng build --prod --output-path docs --base-href /QuizOMatic/
+*/
