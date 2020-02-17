@@ -47,7 +47,7 @@ export class CoursesProvider {
         ])
       ])
     ]),
-    new Course("Linux Akademie", "linux", "engeto", [
+    new Course("Linux Akademie #1", "linux1", "engeto", [
       new Test("1. Lekce: Práce s Linuxem", "l1", [
         new Question(
           "Ve kterých z níže zmíněných zařízení můžeme najít Linux?",
@@ -1065,7 +1065,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Který z následujících operátorů je vhodný pro automatizaci procesů?\n",
+          "Který z následujících operátorů je vhodný pro automatizaci procesů?",
           QuestionTypes.CHECKBOX,
           [
             new Answer("<", false),
@@ -1093,8 +1093,10 @@ export class CoursesProvider {
             new Answer(" Konec souboru ", true),
             new Answer(" Konec řádku ", false)
           ]
-        ),
-      ]),
+        )
+      ])
+    ]),
+    new Course('Linux Akademie #2', 'linux2','engeto', [
       new Test('#2 1. Lekce: Složení OS Linux', '2.1.1', [
         new Question(
           "Jak se jmenuje soubor/program, který je srdcem počítače?",
@@ -1117,7 +1119,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Vyber důležité subsystémy jádra Linuxu:\n",
+          "Vyber důležité subsystémy jádra Linuxu:",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" správa sítě ", true),
@@ -1128,7 +1130,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "K čemu jsou tyto důležité subsystémy jádra dobré?\n",
+          "K čemu jsou tyto důležité subsystémy jádra dobré?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" starají se o management procesů ", true),
@@ -1138,13 +1140,114 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "K čemu nám je filesystém?\n",
+          "K čemu nám je filesystém?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" Slouží k organizaci dat. ", true),
             new Answer(" Slouží k systémovým voláním. ", false),
             new Answer(" Řídí ovladače systému. ", false),
             new Answer(" Slouží k řídění procesů. ", false)
+          ]
+        ),
+      ]),
+      new Test('#2 2. Lekce: Správa uživatelů​', '2.2.1', [
+        new Question(
+          "Příkazem useradd jirka:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" vytvoří uživatele bez domovského adresáře ", false),
+            new Answer(" vytvoří uživatele včetně domovského adresáře /home/jirka ", true),
+            new Answer(" odstraní uživatel jirka ", false),
+            new Answer(" vytvoří uživatele jirka s dodatokovým textem ", false)
+          ]
+        ),
+        new Question(
+          "Pro výpis všech aktuálně přihlášených uživatelů použijeme příkaz/y:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("who", true),
+            new Answer("groups", false),
+            new Answer("users", true),
+            new Answer("w", true)
+          ]
+        ),
+        new Question(
+          "Příkazem usermod -G users,video,audio jirka zajistíme:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" členství uživatele jirka ve skupinách users,video,audio ", true),
+            new Answer(" zrušení členství uživatele jirka ve skupinách users,video,audio ", false),
+            new Answer(" odstranění skupin users,video,audio,jirka ", false),
+            new Answer(" modifikace uživatelů users, video a audio - přidáni do skupiny jirka ", false)
+          ]
+        ),
+        new Question(
+          "Jednorázovou eskalaci práv uživatele zajistíme pomocí příkazu:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("passwd", false),
+            new Answer("visudo", false),
+            new Answer("sudo", true),
+            new Answer("su", false),
+            new Answer(" su -c ", true)
+          ]
+        ),
+        new Question(
+          "Co je to sudoers?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Jedná se o soubor, který ukládá jména skupin ", false),
+            new Answer(" Jedná se o soubor, který ukládá skutečné heslo v šifrovaném formátu pro účet uživatele ", false),
+            new Answer(" Jedná se o soubor, ve kterém je specifikováno, kteří uživatelé můžou operovat jako root ", true),
+            new Answer(" Jedná se o soubor, ve kterém jsou uloženy základní informace o uživatelských účtech. ", false)
+          ]
+        ),
+        new Question(
+          "V jakém souboru najdeme informace o heslech uživatelů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /etc/passwd ", false),
+            new Answer(" /etc/group ", false),
+            new Answer(" /etc/shadow ", true),
+            new Answer(" /etc/sudoers ", false)
+          ]
+        ),
+        new Question(
+          "V jakém souboru najdeme informace o uživatelých?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /etc/passwd ", true),
+            new Answer(" /etc/group ", false),
+            new Answer(" /etc/shadow ", false),
+            new Answer(" /etc/sudoers ", false)
+          ]
+        ),
+        new Question(
+          "K čemu slouží příkaz visudo?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Používá ke spouštění příkazu jako superuživatel. ", false),
+            new Answer(" Používá se ke změně uživatele. ", false),
+            new Answer(" Otevře soubor /etc/sudoers v editoru vi. ", true)
+          ]
+        ),
+        new Question(
+          "Který/é z těchto příkazů je možné použít pro zjištění všech skupin, do kterých patří uživatel jirka:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" groups jirka ", true),
+            new Answer(" cat /etc/group | grep jirka ", true),
+            new Answer(" cat /etc/passwd | grep jirka ", false),
+            new Answer(" id jirka ", true)
+          ]
+        ),
+        new Question(
+          "Který z následujících zápisu v /etc/sudoers není vhodný ani pro systém, který je mimo počítačové sítě?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ALL ALL=(ALL) ALL ", false),
+            new Answer(" ALL ALL=(ALL) NOPASSWD: ALL ", true),
+            new Answer(" user ALL=(usename) ALL ", false)
           ]
         ),
       ])
