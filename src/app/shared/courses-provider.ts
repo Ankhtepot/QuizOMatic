@@ -1455,6 +1455,101 @@ export class CoursesProvider {
             new Answer("Ne", false)
           ]
         ),
+      ]),
+      new Test('5. Lekce: Procesy a Signály', '2.5.1', [
+        new Question(
+          "Co udává hodnota PPID u procesu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" PID jeho rodičovského procesu, ze kterého se proces oddělil ", true),
+            new Answer(" User ID uživatele, který ho vytvořil ", false),
+            new Answer(" Množství paměti, kterou proces využívá ", false)
+          ]
+        ),
+        new Question(
+          "Co se děje s procesem, který je ve stavu RUNNING (Běžící)?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Čeká na volný procesorový čas. ", false),
+            new Answer(" Je právě zpracováván procesorem. ", true),
+            new Answer(" Proces nedělá nic, jen čeká. ", false)
+          ]
+        ),
+        new Question(
+          "Strom procesů zobrazíme příkazem:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ps aux ", false),
+            new Answer(" ps -tree ", false),
+            new Answer("pstree", true)
+          ]
+        ),
+        new Question(
+          "Jak ovlivní následující blok kodu aktuální shell?{ cat /etc/passwd | wc -l ; ls; }",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Proces se provede v aktuálním shellu ", true),
+            new Answer(" Proces se provede v subshellu ", false),
+            new Answer(" Proces se neprovede ", false)
+          ]
+        ),
+        new Question(
+          "Co je systémové volání fork()?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Vytvoření kopie běžícího procesu ", false),
+            new Answer(" Ukončení běžícího procesu ", false),
+            new Answer(" Upozornění, že je čas k obědu ", false)
+          ]
+        ),
+        new Question(
+          "Který příkaz použijeme pro dynamický (měnící se v čase) výpis procesů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ps aux ", false),
+            new Answer("procs", false),
+            new Answer("top", true)
+          ]
+        ),
+        new Question(
+          "Kterým příkazem vypíšeme všechny běžící procesy sleep v systému?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" sudo pgrep sleep ", true),
+            new Answer(" ps | grep sleep ", true),
+            new Answer(" ps aux | grep sleep ", true)
+          ]
+        ),
+        new Question(
+          "Co je to /proc?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Adresář, který obsahuje průběžné systémové informace ", true),
+            new Answer(" Adresář, který obsahuje soubory uložené na disku ", false),
+            new Answer(" Je to virtualní souborový systém (pseudo-souborový systém) ", true),
+            new Answer(" Místo, kde kernel posílá aktuální informace procesech ", true)
+          ]
+        ),
+        new Question(
+          "Které z následujících příkazů mění prioritu procesů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("top", false),
+            new Answer("ps", false),
+            new Answer("nice", true),
+            new Answer("renice", true)
+          ]
+        ),
+        new Question(
+          "Vyber pravdivá tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Subshell je podproces, který je vytvořen shellem. ", true),
+            new Answer(" Subshell můžeme opustit pomocí zkratky Ctrl + D ", false),
+            new Answer(" Změny provedé v subshellu ovlivní i jeho rodiče. ", true),
+            new Answer(" Subshell můžeme vytvořit příkazem bash ", true)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [
