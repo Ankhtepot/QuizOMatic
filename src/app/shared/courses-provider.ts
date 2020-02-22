@@ -1097,7 +1097,7 @@ export class CoursesProvider {
       ])
     ]),
     new Course('Linux Akademie #2', 'linux2','engeto', [
-      new Test('#2 1. Lekce: Složení OS Linux', '2.1.1', [
+      new Test('1. Lekce: Složení OS Linux', '2.1.1', [
         new Question(
           "Jak se jmenuje soubor/program, který je srdcem počítače?",
           QuestionTypes.CHECKBOX,
@@ -1150,7 +1150,7 @@ export class CoursesProvider {
           ]
         ),
       ]),
-      new Test('#2 2. Lekce: Správa uživatelů​', '2.2.1', [
+      new Test('2. Lekce: Správa uživatelů​', '2.2.1', [
         new Question(
           "Příkazem useradd jirka:",
           QuestionTypes.CHECKBOX,
@@ -1248,6 +1248,211 @@ export class CoursesProvider {
             new Answer(" ALL ALL=(ALL) ALL ", false),
             new Answer(" ALL ALL=(ALL) NOPASSWD: ALL ", true),
             new Answer(" user ALL=(usename) ALL ", false)
+          ]
+        ),
+      ]),
+      new Test('3. Lekce: Vlastnictví Souborů', '2.3.1', [
+        new Question(
+          "Kdo je to vlastník?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Uživatel k němuž se váže daný soubor ", true),
+            new Answer(" Uživatel, který vlastní skupinu ", false),
+            new Answer(" Uživatel, který vlastní domovský adresář ", false),
+            new Answer(" Uživatel, který vytváří skupinu ", false)
+          ]
+        ),
+        new Question(
+          "Pomocí příkazu chown můžeme změnit:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Vlastníka", true),
+            new Answer(" Vlasticnou skupinu ", true),
+            new Answer(" Jméno souboru ", false),
+            new Answer(" Vlastnická práva ", false)
+          ]
+        ),
+        new Question(
+          "Kdy je vytvořena vlastnická skupina?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Při vytvoření souboru ", true),
+            new Answer(" Při vytvoření 2 a více uživatelů ", false),
+            new Answer(" Při vytvoření skupiny ", false)
+          ]
+        ),
+        new Question(
+          "Kterým příkazem změníme vlastnickou skupinu i uživatele zároveň?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" chown test:test ", true),
+            new Answer(" chown : ", false),
+            new Answer(" chgrp test:test ", false),
+            new Answer(" chgrp : ", false)
+          ]
+        ),
+        new Question(
+          "Kterým z následujích příkazů můžeme změni skupinu souboru?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" chown :test ", true),
+            new Answer(" chgrp test ", true),
+            new Answer(" chown test:test ", false),
+            new Answer(" chgrp test: ", false)
+          ]
+        ),
+      ]),
+      new Test('3. Lekce: Přístupová Práva', '2.3.2', [
+        new Question(
+          "Právo pro zápis do souboru|adresáře má číselnou hodnotu:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("4", false),
+            new Answer("2", true),
+            new Answer("7", false),
+            new Answer("1", false)
+          ]
+        ),
+        new Question(
+          "Příkazem chmod 755 /home/jirka/script.sh zajistíme skupině vlastníka souboru:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" právo čtení a zápisu do souboru ", false),
+            new Answer(" právo spuštění souboru (jenom) ", false),
+            new Answer(" právo čtení a spuštění souboru ", true),
+            new Answer(" právo zápisu a spuštění souboru ", false)
+          ]
+        ),
+        new Question(
+          "Pro změnu práv adresáře včetně jeho obsahu použijeme příkaz:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" chmod 755 /home/jirka/scripts ", false),
+            new Answer(" chmod -v 755 /home/jirka/scripts ", false),
+            new Answer(" chmod -Rv 775 /home/jirka/scripts ", true),
+            new Answer(" chmod 775 /home/jirka/scripts -R ", true)
+          ]
+        ),
+        new Question(
+          "Změnu vlastníka anebo skupiny souboru|adresáře zajistíme pomocí:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("usermod", false),
+            new Answer("chmod", false),
+            new Answer("chown", true),
+            new Answer("chgrp", true)
+          ]
+        ),
+        new Question(
+          "Příkazem chmod o=r /home/jirka/script.sh zajistíme:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" právo čtení vlastníkovi a skupině ", false),
+            new Answer(" právo zápisu a čtení ostatním ", false),
+            new Answer(" právo čtení ostatním ", true),
+            new Answer(" právo čtení vlastníkovi,skupině i ostatním ", false)
+          ]
+        ),
+      ]),
+      new Test('3. Lekce: Speciální Práva', '2.3.3', [
+        new Question(
+          "SUID slouží na:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" vykonání příkazu s právy jako uživatel, který jej spustil ", false),
+            new Answer(" vykonání příkazu s právy jako superuživatel root ", false),
+            new Answer(" vykonání příkazu s právy jako uživatel, který je vlastníkem binárky ", true),
+            new Answer(" vykonání příkazu s právy jako skupina, která je vlastníkem příkazu ", false)
+          ]
+        ),
+        new Question(
+          "Jakým příkazem mohu nastavit SUID na binárku /sbin/mkfs?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" chown o+s /sbin/mkfs ", false),
+            new Answer(" chmod u+s /sbin/mkfs ", true),
+            new Answer(" chmod 4755 /sbin/mkfs ", true),
+            new Answer(" chmod 2755 /sbin/mkfs ", false)
+          ]
+        ),
+        new Question(
+          "Vyber správné tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" SUID se používá k přístupu ke zdrojům (souborům), ke kterým nemáme jako běžný uživatel přístup - např. /etc/shadow ", true),
+            new Answer(" SGID se aplikuje na nové soubory ve složce, která má tento příznak nastaven ", true),
+            new Answer(" SUID se používá pro příkaz sudo ", true),
+            new Answer(" SGID nelze nastavit na složku ", false)
+          ]
+        ),
+        new Question(
+          "Sticky bit:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" zabraňuje odstranění souborů ve sdílené složce jinými uživateli ", true),
+            new Answer(" opravňuje smazat všechna data superuživatele root ", false),
+            new Answer(" je tradiční příznak na složce /tmp ", true),
+            new Answer(" je tradiční příznak na složce /var ", false)
+          ]
+        ),
+        new Question(
+          "Vyberte pravdivé tvrzení o umask:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" umask přidá sadu nastavených oprávnění (např. 022) k 000 ", false),
+            new Answer(" umask odebere sadu oprávnění (např. 022) od 777 nebo 666 ", true),
+            new Answer(" pro soubory se používá 777 - umask ", false),
+            new Answer(" pro složky se používá 777 - umask ", true)
+          ]
+        ),
+      ]),
+      new Test('3. Lekce: ACL', '2.3.4', [
+        new Question(
+          "K čemu používáme ACL",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" K rozšíření běžných práv pro jednotlivé uživatele. ", true),
+            new Answer(" K zúžení běžných práv pro jednotlivé uživatele. ", true),
+            new Answer(" K rozšíření běžných práv pro jednotlivé skupiny. ", true),
+            new Answer(" K zúžení běžných práv pro jednotlivé skupiny. ", true)
+          ]
+        ),
+        new Question(
+          "Který z následujích příkazů nastaví práva pro skupinu student?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" setfacl -m u:student:rwx /etc/services ", false),
+            new Answer(" setfacl -m g:student:rwv /etc/services ", true),
+            new Answer(" getfacl -m g:student:rwv /etc/services ", false),
+            new Answer(" getfacl -m u:student:rwx /etc/services ", false)
+          ]
+        ),
+        new Question(
+          "Jak zrušíme všechny ACL pro souboru /etc/services?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" setfacl -x u:student /etc/services ", false),
+            new Answer(" setfacl -b /etc/services ", true),
+            new Answer(" setfacl /etc/services ", false),
+            new Answer(" setfacl -m /etc/services ", false)
+          ]
+        ),
+        new Question(
+          "Jak zrušíme všechna ACL pro uživatele student k souboru /etc/services?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" setfacl -m u:student:--- /etc/services ", false),
+            new Answer(" setfacl -m g:student:--- /etc/services ", true),
+            new Answer(" setfacl -x g:student /etc/services ", true),
+            new Answer(" setfacl -x student /etc/services ", false)
+          ]
+        ),
+        new Question(
+          "ACL jsou povolena na všech Linuxových systémech.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Ano", false),
+            new Answer("Ne", false)
           ]
         ),
       ])

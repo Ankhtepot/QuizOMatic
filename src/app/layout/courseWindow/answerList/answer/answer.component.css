@@ -7,6 +7,8 @@
 
 .answer-text {
   margin: 0.1rem;
+  width: 350px;
+  text-align: left;
 }
 
 .answer-correct {
@@ -30,5 +32,9 @@
 
   #answer_component {
     margin-bottom: 0.5rem;
+  }
+
+  .answer-text {
+    text-align: center;
   }
 }
