@@ -1550,6 +1550,160 @@ export class CoursesProvider {
             new Answer(" Subshell můžeme vytvořit příkazem bash ", true)
           ]
         ),
+      ]),
+      new Test('4. Lekce: Balíčky ', '2.4.1', [
+        new Question(
+          "Které balíkovací systémy souvisí s Red Hat distribucemi?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("pacman", false),
+            new Answer("yum", true),
+            new Answer(" apt-get ", false),
+            new Answer("rpm", true)
+          ]
+        ),
+        new Question(
+          "Nízkoúrovňové balíkovací systémy související s RedHat a Debian rodinami se jmenují:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" dnf ", false),
+            new Answer("dpkg", true),
+            new Answer("rpm", true),
+            new Answer(" apt-get ", false)
+          ]
+        ),
+        new Question(
+          "Jak bychom na distribuci RedHatu zjistili, jaké máte nainstalované balíčky?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" yum list ", true),
+            new Answer(" rpm -qa ", false),
+            new Answer(" rpm -lp ", true),
+            new Answer(" rpm -aq ", true)
+          ]
+        ),
+        new Question(
+          "Mezi high level operace při práci s balíčky patří:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" rozbalování souborů z balíčku a jejich umístění na správném místě ", true),
+            new Answer(" kontrola konfliktů ", true),
+            new Answer(" kompilace softwaru ", false),
+            new Answer(" kontrola závislosti ", true)
+          ]
+        ),
+        new Question(
+          "Místo, kam se ukládají vaše repozitáře:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /etc/apt/repos.d/ ", false),
+            new Answer(" /etc/yum.repos.d/ ", true),
+            new Answer(" /apt/repos.d/ ", false),
+            new Answer(" /repos/ ", false)
+          ]
+        ),
+        new Question(
+          "Jak zjistím dodatečnou informaci o nějakém balíčku (krátký popis, verze, ...)?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" yum info package_name ", true),
+            new Answer(" yum notes package_name ", false),
+            new Answer(" rpm -qi package_name ", true),
+            new Answer(" rpm -qf package_name ", false)
+          ]
+        ),
+        new Question(
+          "Jak zobrazím seznam konfiguračních souborů pro konkrétní balíček pomocí RPM?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" rpm -qR package_name ", false),
+            new Answer(" rpm -qc package_name ", true),
+            new Answer(" rpm -ev –nodeps package_name ", false),
+            new Answer(" rpm -qi package_name ", false)
+          ]
+        ),
+        new Question(
+          "Když pomocí nízkoúrovňového balíkovacího systému (RPM, DPKG) odstraním nějaký balíček...\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" odstraním pouze ten konkétní balíček. ", true),
+            new Answer(" odstraním všechny jeho závislosti. ", false),
+            new Answer(" budu mít konzistentní systém. ", false),
+            new Answer(" tak mohu způsobit, že mi nebude fungovat software, který je na něm závislý. ", true)
+          ]
+        ),
+        new Question(
+          "Mezi známé linuxové repozitáře patří například:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("EPEL", true),
+            new Answer("Canonical", false),
+            new Answer("Repobase", false),
+            new Answer(" RPM Fusion ", true)
+          ]
+        ),
+        new Question(
+          "Ve výchozích repozitářích u Red Hat nebo Debian distribucí se nachází software, který je:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("zdarma", true),
+            new Answer("proprietární", false),
+            new Answer("svobodný", true),
+            new Answer(" s omezenými autorskými právy ", false)
+          ]
+        ),
+      ]),
+      new Test('4. Lekce: Kompilace', '2.4.2', [
+        new Question(
+          "Co je to kompilace?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" proces, kdy přeložíme zdrojové kódy aplikace do formátu, kterému rozumí počítač ", true),
+            new Answer(" proces, kdy přeložíme zdrojové kódy aplikace do binární formy ", true),
+            new Answer(" proces, kdy extrahujeme soubory z archivu ", false),
+            new Answer(" proces, kdy instalujeme balíček pomocí správce balíčků ", false)
+          ]
+        ),
+        new Question(
+          "Binární soubor, zkráceně binárka je:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" soubor, který obsahuje řetězec nul a jedniček ", true),
+            new Answer(" spustitelný soubor ", true),
+            new Answer(" textový soubor ", false),
+            new Answer(" soubor, který pro přečtení třeba nějakým způsobem interpretovat ", true)
+          ]
+        ),
+        new Question(
+          "program který build provádí se nazývá:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("sgi", false),
+            new Answer("make", true),
+            new Answer("gcc", false),
+            new Answer("create", false)
+          ]
+        ),
+        new Question(
+          "Co je to built?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Konečná fáze kompilace. ", false),
+            new Answer(" Synonymum pro kompilaci. ", true),
+            new Answer(" Termín nesouvisející s kompilací. ", false),
+            new Answer(" Kompilační program. ", false)
+          ]
+        ),
+        new Question(
+          "Nový build potřebuji, když:\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" chci interpretovat skripty. ", false),
+            new Answer(" potřebuji překlad algoritmů zapsaných ve vyšším programovacím jazyce do jazyka nižšího, případně strojového kódu. ", true),
+            new Answer(" chci přeložit lidsky čitelný zápis do strojových instrukcí. ", true),
+            new Answer(" provedu změny ve zdrojovém kódu programu. ", true)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [
