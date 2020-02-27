@@ -1573,7 +1573,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Jak bychom na distribuci RedHatu zjistili, jaké máte nainstalované balíčky?\n",
+          "Jak bychom na distribuci RedHatu zjistili, jaké máte nainstalované balíčky?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" yum list ", true),
@@ -1583,7 +1583,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Mezi high level operace při práci s balíčky patří:\n",
+          "Mezi high level operace při práci s balíčky patří:",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" rozbalování souborů z balíčku a jejich umístění na správném místě ", true),
@@ -1593,7 +1593,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Místo, kam se ukládají vaše repozitáře:\n",
+          "Místo, kam se ukládají vaše repozitáře:",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" /etc/apt/repos.d/ ", false),
@@ -1603,7 +1603,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Jak zjistím dodatečnou informaci o nějakém balíčku (krátký popis, verze, ...)?\n",
+          "Jak zjistím dodatečnou informaci o nějakém balíčku (krátký popis, verze, ...)?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" yum info package_name ", true),
@@ -1613,7 +1613,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Jak zobrazím seznam konfiguračních souborů pro konkrétní balíček pomocí RPM?\n",
+          "Jak zobrazím seznam konfiguračních souborů pro konkrétní balíček pomocí RPM?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" rpm -qR package_name ", false),
@@ -1623,7 +1623,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Když pomocí nízkoúrovňového balíkovacího systému (RPM, DPKG) odstraním nějaký balíček...\n",
+          "Když pomocí nízkoúrovňového balíkovacího systému (RPM, DPKG) odstraním nějaký balíček...",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" odstraním pouze ten konkétní balíček. ", true),
@@ -1633,7 +1633,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Mezi známé linuxové repozitáře patří například:\n",
+          "Mezi známé linuxové repozitáře patří například:",
           QuestionTypes.CHECKBOX,
           [
             new Answer("EPEL", true),
@@ -1643,7 +1643,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Ve výchozích repozitářích u Red Hat nebo Debian distribucí se nachází software, který je:\n",
+          "Ve výchozích repozitářích u Red Hat nebo Debian distribucí se nachází software, který je:",
           QuestionTypes.CHECKBOX,
           [
             new Answer("zdarma", true),
@@ -1655,7 +1655,7 @@ export class CoursesProvider {
       ]),
       new Test('4. Lekce: Kompilace', '2.4.2', [
         new Question(
-          "Co je to kompilace?\n",
+          "Co je to kompilace?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" proces, kdy přeložíme zdrojové kódy aplikace do formátu, kterému rozumí počítač ", true),
@@ -1665,7 +1665,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Binární soubor, zkráceně binárka je:\n",
+          "Binární soubor, zkráceně binárka je:",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" soubor, který obsahuje řetězec nul a jedniček ", true),
@@ -1675,7 +1675,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "program který build provádí se nazývá:\n",
+          "program který build provádí se nazývá:",
           QuestionTypes.CHECKBOX,
           [
             new Answer("sgi", false),
@@ -1685,7 +1685,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Co je to built?\n",
+          "Co je to built?",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" Konečná fáze kompilace. ", false),
@@ -1695,7 +1695,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Nový build potřebuji, když:\n",
+          "Nový build potřebuji, když:",
           QuestionTypes.CHECKBOX,
           [
             new Answer(" chci interpretovat skripty. ", false),
@@ -1704,7 +1704,317 @@ export class CoursesProvider {
             new Answer(" provedu změny ve zdrojovém kódu programu. ", true)
           ]
         ),
-      ])
+      ]),
+      new Test('6. Lekce: Souborové Systémy', '2.6.1', [
+        new Question(
+          "Jaké vlastnosti má soubor typu Runtime?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Zabírá na disku největší místo ", false),
+            new Answer(" Nelze ho odstranit z disku ", false),
+            new Answer(" Fyzicky není na disku a obnovuje se po každém restartu ", true)
+          ]
+        ),
+        new Question(
+          "Vyberte správné znění jedné z nejznámějších linuxových abstrakcí.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Vše co jde, je v systému považováno za soubor ", true),
+            new Answer(" Vše co jde, je v systému považováno na proces ", false),
+            new Answer(" Systém nepoužívá žádné soubory ", false)
+          ]
+        ),
+        new Question(
+          "Jaké složky jsou na klasickém linuxovém systému?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /dev ", true),
+            new Answer(" /tmp ", true),
+            new Answer(" /etc ", true),
+            new Answer(" /log ", false)
+          ]
+        ),
+        new Question(
+          "K čemu slouží adresář /boot ?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Je to domovský adresář uživatele root ", false),
+            new Answer(" Jsou zde uloženy dočasné soubory ", false),
+            new Answer(" Jsou zde data potřebná ke startu systému ", true)
+          ]
+        ),
+        new Question(
+          "Vyberte pravdivá tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Adresář /proc je \"virtuální souborový systém\" ", true),
+            new Answer(" Adresář / je kořenovým adresářem systému ", true),
+            new Answer(" Adresář /home je domovským adresářem všech uživatelů ", false)
+          ]
+        ),
+        new Question(
+          "Vyber správné tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" složka /etc obsahuje konfigurační soubory pro systém a aplikace ", true),
+            new Answer(" složka /boot obsahuje zavaděč systému a mimo jiné obraz kernelu ", true),
+            new Answer(" v /tmp můžeme najít dočasné soubory pro práci s pamětí RAM ", false),
+            new Answer(" složka /dev obsahuje pouze fyzické zařízení (disk, ...) připojené k počítači ", false)
+          ]
+        ),
+        new Question(
+          "Jak definujeme filesystém na Linuxu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" invertovaná struktura podobná seznamu ", false),
+            new Answer(" hierarchická struktura, která má tvar klasického stromu ", false),
+            new Answer(" hierarchická struktura, která má tvar inverzního stromu ", true),
+            new Answer(" potřebná součást (vrstva) pro práci s daty na disku ", true)
+          ]
+        ),
+        new Question(
+          "Jaké jsou nejčastější typy formátování na Linuxu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("NFTS", false),
+            new Answer("ext4", true),
+            new Answer("FAT", false),
+            new Answer("HFS+", false),
+            new Answer("ext3", true)
+          ]
+        ),
+        new Question(
+          "Pokud bychom se chtěli podívat na formát souborových systémů, který z následujících příkazů použijeme?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" tree -d -L 1 ", false),
+            new Answer("lsof", false),
+            new Answer(" df -T ", true),
+            new Answer(" du -h ", false)
+          ]
+        ),
+        new Question(
+          "Jak se nazývá databáze, která spravuje soubory ve filesystému?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Boot blok ", false),
+            new Answer(" Super blok ", false),
+            new Answer(" Inode tabulka ", true),
+            new Answer(" Virtuální souborový systém ", false)
+          ]
+        ),
+      ]),
+      new Test('6. Lekce: Zařízení', '2.6.2', [
+        new Question(
+          "Které z následujících zařízení je fyzické i logické?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("HDD", false),
+            new Answer("SSD", false),
+            new Answer("/mnt", false),
+            new Answer("/media", false),
+            new Answer("/dev", true),
+            new Answer(" /dev/sda ", true)
+          ]
+        ),
+        new Question(
+          "Jaké pseudozařízení známe?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("null", true),
+            new Answer("random", true),
+            new Answer("sdb", false),
+            new Answer("full", true),
+            new Answer("zero", true),
+            new Answer("SATA", false)
+          ]
+        ),
+        new Question(
+          "Co je to SCSI/SATA?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Jedná se o pseudozařízení. ", false),
+            new Answer(" Jedná se o protokoly, pomocí nichž můžeme komunikovat s externími, fyzickými zařízeními. ", true),
+            new Answer(" Jedná se o tzv. proudy dat. ", false),
+            new Answer(" Jedná se o jednotlivé oddíly na disku. ", false)
+          ]
+        ),
+        new Question(
+          "Které z následujích může být ekvivalentem například k disku C: na Windows?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /dev/sda ", false),
+            new Answer(" /dev/sdc ", false),
+            new Answer(" /dev/sda1 ", true),
+            new Answer(" /dev/sdc1 ", true)
+          ]
+        ),
+        new Question(
+          "Vyber správné tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Disk se dělí na oddíly. ", true),
+            new Answer(" Oddíly se dělí na disk. ", false),
+            new Answer(" Jednotlivé disky se označují čísly. ", false),
+            new Answer(" Jednotlivé oddíly se označují čísly. ", true)
+          ]
+        ),
+        new Question(
+          "Jak se jmenuje pseudozařízení, které při zápisu příjme a zahodí data, které do něho pošleme, a při čtení nic navrátí?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" /dev/zero ", false),
+            new Answer(" /dev/null ", true),
+            new Answer(" /dev/random ", false),
+            new Answer(" /dev/full ", false)
+          ]
+        ),
+        new Question(
+          "Co je to fstab?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Je to zařízení, které není ve skutečnosti připojeno k našemu systému. ", false),
+            new Answer(" Je to abstraktní vrstva, která se stará o sjednocení způsobu přístupu k našim datům. ", false),
+            new Answer(" Je to protokol, pomocí kterého můžeme komunikovat s externími, fyzickými zařízeními. ", false),
+            new Answer(" Je to adresář s tabulkou souborových systémů, která se mountují při bootu a adresářích. ", true)
+          ]
+        ),
+        new Question(
+          "Do kterého typu zařízení spadá pevný disk?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Znaková", false),
+            new Answer("Bloková", true),
+            new Answer("Pipe", false),
+            new Answer("Socket", false)
+          ]
+        ),
+        new Question(
+          "Co je to mountpoint?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Je to adresář, kam můžeme připojit nové zařízení. ", true),
+            new Answer(" Jedná se o zařízení, které je fyzické i logické. ", false),
+            new Answer(" Jedná se o fyzický vstup pro USB disk. ", false),
+            new Answer(" Jedná se o pseudozařízení. ", false)
+          ]
+        ),
+        new Question(
+          "Které příkazy nám můžou pomoci bezpečně odebrat fyzické zařízení?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("mount", false),
+            new Answer("umount", true),
+            new Answer("unmount", false),
+            new Answer("lsof", true)
+          ]
+        ),
+      ]),
+      new Test('6. Lekce: Inodes a Odkazy', '2.6.2', [
+        new Question(
+          "Vyber správné tvrzení o inodes:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Každý indo má unikátní číslo v rámci filesystému. ", true),
+            new Answer(" Na systému máme omezený počet inodes. ", true),
+            new Answer(" Inodes se nacházejí v části filesystému, která je vyhrazená pro samotná data. ", false),
+            new Answer(" Inode číslo můžeme vypsat pomocí příkazu ls nebo stat. ", true),
+            new Answer(" Některé typy systémů podporují tvorbu nových inodes v průběhu používání disku. ", true)
+          ]
+        ),
+        new Question(
+          "Které informace obsahují inodes?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Velikost a název souboru. ", false),
+            new Answer(" Přístupové údaje o souborech a vlastnících. ", true),
+            new Answer(" Časové známky - atime, ctime a mtime ", true),
+            new Answer(" ACL (rozšířené přístupy) ", true)
+          ]
+        ),
+        new Question(
+          "V kterých typech filesystémů je počet inodes předem určen?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("ext3", true),
+            new Answer("ext4", true),
+            new Answer("XFS", false),
+            new Answer("JFS", false)
+          ]
+        ),
+        new Question(
+          "Který z následujících příkazů slouží pro výpis konkrétních inode/s?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("stat", true),
+            new Answer(" stat -i ", false),
+            new Answer("ls", false),
+            new Answer(" ls -i ", true),
+            new Answer(" find / -inum $inode ", true)
+          ]
+        ),
+        new Question(
+          "Co je to odkaz?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Soubor, který je vytvořen kopií již existujícího souboru. ", false),
+            new Answer(" Soubor, který vytváří nové jméno pro již existující soubor. ", true),
+            new Answer(" Soubor, který když smažeme, smažeme i původní soubor. ", false),
+            new Answer(" Je to synonymum k inode. ", false)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi kopií souboru a pevným odkazem na soubor?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Kopie dostane nové místo na disku. ", true),
+            new Answer(" Pevný odkaz dostane nové místo na disku. ", false),
+            new Answer(" Když změním kopii, změním i původní soubor. ", false),
+            new Answer(" Když změním pevným odkaz, změním i původní soubor. ", true),
+            new Answer(" Není mezi nimi žádný rozdíl. ", false)
+          ]
+        ),
+        new Question(
+          "Jak zjistíme, jestli je daný soubor symbolický odkaz?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Pomocí čísla za přístupovými právy. ", false),
+            new Answer(" Pomocí prvního bitu v přístupových právech. ", true),
+            new Answer(" Pomocí názvu souboru ", false),
+            new Answer(" Pomocí historie souboru ", false)
+          ]
+        ),
+        new Question(
+          "Pevný odkaz (hard link) má následující vlastnosti:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Jedná se o odkaz na místo konkrétního souboru na disku. ", true),
+            new Answer(" Můžeme ho použít na soubory i složky. ", false),
+            new Answer(" Můžeme vytvořit hard link napříč rozdílnými filesystémy. ", false),
+            new Answer(" Při vytvoření nového hard linku dochází ke kopírování (duplikaci) dat. ", false)
+          ]
+        ),
+        new Question(
+          "Symbolický odkaz (symbolic link) má následující vlastnosti:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Funguje pouze v rámci jednoho filysystému. ", false),
+            new Answer(" Jedná se o odkaz na jméno (jako například zástupce ve Windows). ", true),
+            new Answer(" Můžeme ho použít na soubory i složky. ", true),
+            new Answer(" Příklad vytvoření symbolic linku může být: ln /etc/passwd /tmp/xyz ", false)
+          ]
+        ),
+        new Question(
+          "Vyber správné/á tvrzení:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Můžeme vytvořit symbolic link dvěma filesystémy (disky). ", true),
+            new Answer(" S vytvořením nového symbolic linku vytváříme nový inode ", true),
+            new Answer(" Pokud se počet symbolických odkazů rovná nule, soubor je permanentně odstraněn z disku. ", false),
+            new Answer(" Příkazem ln /etc/passwd /etc/passwd.link se vytvoří soubor /etc/passwd.link se stejnými právy, velikostí i vlastníkem jako má soubor /etc/passwd ", true)
+          ]
+        ),
+      ]),
     ]),
     new Course("Python Akademie", "python", "engetoB", [
       new Test('exampleTest', 'ext', [
@@ -1720,7 +2030,7 @@ export class CoursesProvider {
             new Answer("answer6", false)
           ]
         ),
-      ])
+      ]),
     ])
   ];
 }
