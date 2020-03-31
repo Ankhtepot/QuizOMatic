@@ -1,7 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Course } from "./shared/model/course.model";
 import { CoursesProvider } from "./shared/courses-provider";
-import {TestService} from './layout/courseWindow/test.service';
 
 @Injectable({
   providedIn: "root"

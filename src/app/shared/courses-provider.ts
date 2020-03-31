@@ -2016,6 +2016,242 @@ export class CoursesProvider {
         ),
       ]),
     ]),
+    new Course("Linux: Sítě", "lnet", "engeto", [
+      new Test('2. Lekce Protokoly TCP/IP', 'net.2.1', [
+        new Question(
+          "Kolik vrstev má TCP/IP? Jak se jmenují?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" 5 vrstev: 1) Drátová, 2) Převáděcí, 3) Kontrolní, 4) Komunikační, 5) Programová ", false),
+            new Answer(" 4 vrstvy: 1) Aplikační, 2) Transportní, 3) Síťová, 4) Fyzická ", true),
+            new Answer(" 7 vrstev: 1) Aplikační, 2) Prezentační, 3) Relační, 4) Transportní, 5) Síťová, 6) Spojová, 7) Fyzická ", false),
+            new Answer(" TCP/IP není rozděleno do vrstev, ale do kategorií, do kterých se pak rozdělují jednotlivé protokoly. ", false),
+            new Answer(" 4 vrstvy: 1) Programová, 2) Překládací, 3) Kontrolní, 4) Fyzická ", false)
+          ]
+        ),
+        new Question(
+          "Co znamená OSI v názvu ISO/OSI?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ISO je formát obrazu CD/DVD. ", false),
+            new Answer(" Je to jméno progrockové kapely, jejíž členové ve svém civilním zaměstnání vytvořili tento model. ", false),
+            new Answer(" Online Safety Institute – název institutu, který společně s firmou ISO stál u zrodu tohoto modelu. ", false),
+            new Answer(" Open Systems Interconnection. ", true),
+            new Answer(" Open software Infrastructure. ", false)
+          ]
+        ),
+        new Question(
+          "Co zajišťuje protokol SMTP a na jaké je vrstvě?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Umožňuje ovládat vzdálený server. Transportní vrstva. ", false),
+            new Answer(" Zajišťuje přenost elektronické pošty. Aplikační vrstva. ", true),
+            new Answer(" Zajišťuje kontrolu paketů před odesláním. Transportní vrstva. ", false),
+            new Answer(" Zajišťuje adresování paketů. Síťová vrstva. ", false),
+            new Answer(" Zajišťuje převod digitálního signálu na optický signál. Fyzická vrstva. ", false)
+          ]
+        ),
+        new Question(
+          "Která z následujících tvrzení o DHCP jsou pravdivá?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" DHCP je protokol, který se stará o překlad domén na IP adresy. ", false),
+            new Answer(" Klient si při komunikaci s DHCP serverem vymění zpravidla čtyři pakety. ", true),
+            new Answer(" Komunikace s DHCP serverem probíhá na portech UDP/67 a UDP/68. ", true),
+            new Answer(" DHCP není až tak důležité pro veřejné sítě, například pro Wi-Fi síť v nějaké kavárně. ", false),
+            new Answer(" DHCP můžeme omezit tak, aby obsluhoval jen konkrétní zařízení. ", true)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi HTTP a HTTPS?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Žádný", false),
+            new Answer(" Komunikují pomocí rozdílných protokolů. ", true),
+            new Answer(" Každý slouží jinému účelu. ", false),
+            new Answer(" HTTP je bezpečnější. ", false),
+            new Answer(" HTTPS je bezpečnější. ", true)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi verzemi HTTP 1.x a HTTP 2?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" HTTP 1.x je sice méně bezpečný, ale zato rychlejší. ", false),
+            new Answer(" HTTP 2 po odeslání webové stránky ukončí spojení. ", false),
+            new Answer(" HTTP 2 umožňuje odpovídat na více dotazů najednou, a tím urychlit komunikaci. ", true),
+            new Answer(" HTTP 1.x je používanější než HTTP 2. ", true),
+            new Answer(" HTTP 2 je bezpečnější. ", true)
+          ]
+        ),
+        new Question(
+          "Co znamená zkratka TLD?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Top Level Domain – doména nejvyššího řádu. ", true),
+            new Answer(" Je to anglická verze českého sro. ", false),
+            new Answer(" Transfer Lightweight Datagram – datagram obsahující informace o následující komunikaci. ", false),
+            new Answer(" To Localhost Datagram – datagram, který má být odeslán po místní smyčce (loopback). ", false),
+            new Answer(" Transport Local Downstream – protokol pro stahování souborů z privátního cloudu. ", false)
+          ]
+        ),
+        new Question(
+          "Co se stane, když lokální DNS server nezná doménu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Vrátí error. ", false),
+            new Answer(" Zeptá se na ni kořenového serveru. ", true),
+            new Answer(" Ptá se dalších (vyšších) DNS serverů, jestli ji neznají. ", true),
+            new Answer(" Neudělá nic. ", false),
+            new Answer(" Vůbec to ničemu nebrání, ke kontaktování serveru stačí jen doména. ", false)
+          ]
+        ),
+        new Question(
+          "V jakém případě bys použil Telnet?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" K testování otevřených portů na serveru. ", true),
+            new Answer(" Doporučuje se k ovládání vzdáleného serveru. ", false),
+            new Answer(" K ovládání zastaralého hardware, který k připojení Telnet vyžaduje. ", true),
+            new Answer(" K přenosu souborů. ", false),
+            new Answer(" K ničemu. ", false)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi TCP/IP a ISO/OSI?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Tyto dva modely spolu vůbec nesouvisí, nelze je porovnávat. ", false),
+            new Answer(" Počet vrstev, TCP/IP má 4 a ISO/OSI 7. ", true),
+            new Answer(" TCP/IP je starší. ", false),
+            new Answer(" ISO/OSI je pouze teoretický model, doporučení jak vystavět komunikační síť. ", true),
+            new Answer(" Počet vrstev, TCP/IP má 7 a ISO/OSI 4. ", false)
+          ]
+        ),
+      ]),
+    ]),
+    new Course("Linux: Sítě #2 - Administrace a zabezpečení sítí", "net2", "engeto", [
+      new Test('1. Příkazy v Linuxu', 'net2.1', [
+        new Question(
+          "K čemu slouží příkaz ping?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" K prvotní diagnostice bezpečnosti sítě. ", false),
+            new Answer(" Je to značka limonády v prášku. ", false),
+            new Answer(" K připojení se na vzdálený server. ", false),
+            new Answer(" Proskáče síťová zařízení mezi námi a cílem a pak vypíše jejich IP adresy a dobu trvání jednotlivých skoků. ", false),
+            new Answer(" Ke zjištění latence našeho připojení. ", true)
+          ]
+        ),
+        new Question(
+          "Kterým z následujících příkazů zjistíme, která IP adresa patří k zadanému domainname?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("ping", false),
+            new Answer("domainname", false),
+            new Answer("hostname", false),
+            new Answer("nmap", false),
+            new Answer("nslookup", true)
+          ]
+        ),
+        new Question(
+          "Z následujících výroků vyber ty pravdivé.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Pomocí příkazu nslookup můžeme zjistit, jaké domain name má počítač, pokud známe jeho IP adresu. ", true),
+            new Answer(" Pomocí příkazu hostname se můžeme k počítači připojit ze sítě. ", false),
+            new Answer(" Příkazem nmap můžeme scanovat i počítače, u nichž známe jen jejich domain name, a ne IP adresu. ", true),
+            new Answer(" Hostname a domain name můžeme změnit pomocí jednoho příkazu, pouze použijeme jiné přepínače. ", false),
+            new Answer(" Domain name má každý počítač. ", false)
+          ]
+        ),
+        new Question(
+          "Co všechno musíme splnit, abychom mohli použít příkaz scp?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Na našem počítači musíme mít nainstalované SSH. ", true),
+            new Answer(" Na vzdáleném serveru musí běžet SSH daemon. ", true),
+            new Answer(" Musíme mít nainstalovaný antivirový program na systému, ze kterého příkaz spouštíme. ", false),
+            new Answer(" Musíme se na vzdálený server nejdříve připojit přes SSH. ", false),
+            new Answer(" Na vzdáleném serveru musí být nainstalované scp. ", true)
+          ]
+        ),
+        new Question(
+          "Které z následujících výroků nejsou pravdivé?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Příkazem traceroute můžeme monitorovat síťový provoz na našem serveru. ", true),
+            new Answer(" Tcpdump zobrazí konečný počet záznamů a sám se ukončí. ", true),
+            new Answer(" Příkazem nmap můžeme monitorovat pouze počítače zapojené v síti, aniž bychom zjišťovali, jaké porty jsou na nich otevřené. ", false),
+            new Answer(" Scp umožňuje pouze nahrávat na vzdálený server. ", true),
+            new Answer(" Scp umožňuje pouze stahovat ze vzdáleného serveru. ", true)
+          ]
+        ),
+        new Question(
+          "Co všechno umožňuje příkaz tcpdump?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Sleduje cestu paketů od z našeho zařízení k cíli. ", false),
+            new Answer(" Kontinuálně sleduje síťový provoz na našem počítači. ", true),
+            new Answer(" Může kontinuálně sledovat provoz na požadovaném portu. ", true),
+            new Answer(" Příkaz se ukončí po zadaném počtu záznamů. ", false),
+            new Answer(" Příkaz se může ukončit po zadaném počtu záznamů. ", true)
+          ]
+        ),
+      ]),
+      new Test('3. Bezpečnost na síti', 'net2.3.1', [
+        new Question(
+          "Jaké má iptables tři základní řetězy?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" INPUT, FORWARD ", false),
+            new Answer(" ACCEPT, DROP, RETURN ", false),
+            new Answer(" INPUT, FORWARD, OUTPUT ", true),
+            new Answer(" INVALID, ESTABLISHED, RELATED ", false)
+          ]
+        ),
+        new Question(
+          "Kolik vestavěných řetězů najdeme ve firewalld",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("9", false),
+            new Answer("3", false),
+            new Answer(" Firewalld nemá řetězy, ale zóny. ", true),
+            new Answer("6", false)
+          ]
+        ),
+        new Question(
+          "Jakým příkazem vytvoříme lokální SSH tunel na vzdálený server?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ssh -L [lokální port]:[doména]:[port] user@host ", true),
+            new Answer(" ssh -R [vzdálený port]:[doména]:[lokální port] user@host ", false),
+            new Answer(" ssh -T [lokální port]:[doména]:[port] user@host ", false),
+            new Answer(" ssh -L [vzdálený port]:[doména]:[lokální port] user@host ", false)
+          ]
+        ),
+        new Question(
+          "Ve kterých z následujících možností je nejlepší využít VPN?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Doma. ", false),
+            new Answer(" Na chatě. ", false),
+            new Answer(" V práci. ", false),
+            new Answer(" Kdekoli, kde nemůžeme věřit zabezpečení našeho internetového připojení. ", true)
+          ]
+        ),
+        new Question(
+          "Seřaď Wi-Fi protokoly od nejstarších po nejmladší.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" WPA, WPA2, WPA3 ", false),
+            new Answer(" WEP, WPA, WPA2 ", true),
+            new Answer(" WPA, WEP, WPA2 ", false),
+            new Answer(" RC4, TKIP, AES ", false)
+          ]
+        ),
+      ]),
+    ]),
     new Course("Python Akademie", "python", "engetoB", [
       new Test('exampleTest', 'ext', [
         new Question(
@@ -2031,7 +2267,7 @@ export class CoursesProvider {
           ]
         ),
       ]),
-    ])
+    ]),
   ];
 }
 /*
