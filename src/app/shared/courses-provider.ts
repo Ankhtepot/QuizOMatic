@@ -2251,6 +2251,30 @@ export class CoursesProvider {
           ]
         ),
       ]),
+      new Test('4. Něco navíc - pokročilejší témata', 'net2.4.1', [
+        new Question(
+          "Vyber všechny příkazy, kterými lze zjistit IP adresa našeho zařízení.\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" ip addr list ", true),
+            new Answer(" netstat -ie ", true),
+            new Answer("ss", false),
+            new Answer(" nslookup ", false),
+            new Answer("ifconfig", true)
+          ]
+        ),
+        new Question(
+          "Jakým příkazem zobrazíme statistiky síťového provozu?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("tcpdump", false),
+            new Answer("netstat", false),
+            new Answer(" ss -s ", false),
+            new Answer("nstat", true),
+            new Answer(" netstat -s ", false)
+          ]
+        ),
+      ]),
     ]),
     new Course("Python Akademie", "python", "engetoB", [
       new Test('exampleTest', 'ext', [
