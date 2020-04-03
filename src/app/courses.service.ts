@@ -64,8 +64,6 @@ export class CoursesService {
   }
 
   loadCoursesExternally() {
-    // this.courses = this.coursesProvider.loadCoursesForGroup('all');
-    // this.noCoursesFound = false;
     this.notifyLoadCoursesExternally.emit('all');
     this.notifyCoursesLoaded.emit(true);
   }

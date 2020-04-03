@@ -3,6 +3,7 @@ import { Test } from "../../shared/model/test.model";
 import { CoursesService } from "../../courses.service";
 import { Question } from "../../shared/model/question.model";
 import { QuestionTypes } from "../../shared/question-types.enum";
+import {Answer} from '../../shared/model/answer.model';
 
 @Injectable({
   providedIn: "root"
@@ -71,13 +72,29 @@ export class TestService {
       this.selectedTest = null;
       this.selectedQuestion = null;
     } else {
-      this.selectedTest = this.tests[selectedTestIndex];
+      this.selectedTest = this.shuffleAnswersForAllQuestionsInTest(this.tests[selectedTestIndex]);
       this.selectedTestIndex = selectedTestIndex;
       this.selectedQuestion = null;
     }
 
     this.testInAnsweringMode = true;
     this.notifySelectedTestChange.emit(this.selectedTest);
+  }
+
+  shuffleAnswersForAllQuestionsInTest(test: Test) {
+    let testWithShuffledAnswers: Test = JSON.parse(JSON.stringify(test));
+    testWithShuffledAnswers.questions = [];
+    test.questions.forEach(question => {
+      for (let i = 0; i < question.answers.length; i++) {
+        const randomPosition = Math.floor(Math.random() * +question.answers.length);
+        const tempAnswer = question.answers[randomPosition];
+        question.answers[randomPosition] = question.answers[i];
+        question.answers[i] = tempAnswer;
+      }
+      testWithShuffledAnswers.questions.push(question);
+    });
+
+    return testWithShuffledAnswers;
   }
 
   setSelectedQuestion(question: Question) {

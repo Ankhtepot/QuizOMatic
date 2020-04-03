@@ -2276,6 +2276,77 @@ export class CoursesProvider {
         ),
       ]),
     ]),
+    new Course("Linux #3: Pokročilá Práce Na Systému", "Linux3", "engeto", [
+      new Test('2. Služby na Systému a Boot', 'l3.2.1', [
+        new Question(
+          "Kterými z následujících výrazů úplně vypnu počítač?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("poweroff", false),
+            new Answer("shutdown", true),
+            new Answer(" kill -9 1 ", false),
+            new Answer(" shutdown -h ", false),
+            new Answer(" systemtcl poweroff ", true)
+          ]
+        ),
+        new Question(
+          "Které z následujících možností můžeme zařadit mezi implementace initu?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("initramfs", false),
+            new Answer("systemd", true),
+            new Answer("crontab", false),
+            new Answer("upstart", true),
+            new Answer("systemV", true)
+          ]
+        ),
+        new Question(
+          "example",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("answer1", false),
+            new Answer("answer2", false),
+            new Answer("answer3", false),
+            new Answer("answer4", false),
+            new Answer("answer5", false),
+            new Answer("answer6", false)
+          ]
+        ),
+        new Question(
+          "Vyberte pravdivé věty o UEFI.\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" UEFI je uloženo na základní desce. ", true),
+            new Answer(" UEFI je starší než BIOS ", false),
+            new Answer(" UEFI vyhledává zavaděč systému na začátku disku. ", false),
+            new Answer(" UEFI se dodává s většinou nových desek ", true),
+            new Answer(" UEFI ukládá zavaděče systémů na jedno místo. ", true)
+          ]
+        ),
+        new Question(
+          "Které z následujích možností můžeme zařadit mezi units, které používá systemd?\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(" Service unit ", true),
+            new Answer(" Mount unit ", true),
+            new Answer(" Login unit ", false),
+            new Answer(" Log unit ", false),
+            new Answer(" Target unit ", true)
+          ]
+        ),
+        new Question(
+          "Vyberte všechny časové formáty, které můžeme předat příkazu at.\n",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("midnight", true),
+            new Answer("noon", true),
+            new Answer(" úterý odpoledne ", false),
+            new Answer(" 23:42 ", true),
+            new Answer("5PM", true)
+          ]
+        ),
+      ]),
+    ]),
     new Course("Python Akademie", "python", "engetoB", [
       new Test('exampleTest', 'ext', [
         new Question(
